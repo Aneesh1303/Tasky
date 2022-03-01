@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TASKY</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="body" onload="loadExistingCards()">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div id="modal" class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+            <button type="button" class="times" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <label for="ImageURL" class="label">Image URL</label>
+              <input class="Input" type="url" class="" id="ImageURL" placeholder="https://example.png"/>
+            </div>
+            <div class="">
+              <label for="taskTitle" class="label">Task Title</label>
+              <input class="Input" type="text" class="" id="taskTitle" placeholder="Enter Task Title"/>
+            </div>
+            <div class="">
+              <label for="taskType" class="label">Task Type</label>
+              <input class="Input" type="text" class="" id="taskType" placeholder="Enter Task Type"/>
+            </div>
+            <div class="">
+              <label for="taskDescription" class="label">Task Description</label>
+              <textarea class="InputA" type="text" class="" id="taskDescription" placeholder="Enter Task Description"></textarea>
+            </div>
+          </div>
+          <div id="modal" class="modal-footer">
+            <button type="button" class="Close" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="Save" onclick="addNewCard()" data-bs-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav style="background-color: #0B0C10;" class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a id="Tlogo" class="navbar-brand" href="#">Tasky</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a id="Tlogo" class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button type="button" class="Add" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus"></i> Add New</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <section class="row justify-content-center mt-4">
+        <div class="col-6">
+          <div class="input-group mb-3">
+            <input class="srch" id="Search" type="text" placeholder="Search here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span id="Search" class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </section>
+      <section class="task row">
+        <div class="col-4">
+          <div id="card" class="card">
+            <div class="card-header d-flex justify-content-end gap-2">
+              <button class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" name="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+              <button class="edit" type="button" name="button"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </div>
+            <div class="card-body">
+              <img class="img" src="https://img.search.brave.com/kPJdIx4klBYZ-vM8YpLcAQs01rZrB1lF6wlqBCZgYD8/rs:fit:1200:1200:1/g:ce/aHR0cDovL3d3dy5z/aHV0dGVyc3RvY2su/Y29tL2Jsb2cvd3At/Y29udGVudC91cGxv/YWRzL3NpdGVzLzUv/MjAxNi8wMy9mYWxs/LXRyZWVzLXJvYWQt/MS5qcGc" alt="">
+              <h5 id="card-title" class="card-title mt-4">Special title treatment</h5>
+              <p id="card-text" class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="Add">Open Task</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
